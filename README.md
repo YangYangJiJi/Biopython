@@ -1,6 +1,7 @@
-# Biopython
+# Rosalind
 Bioinformatics problem-solving using Python <br>
 Rosalind 문제 풀이를 올립니다.
+https://rosalind.info/problems/list-view/
 
 ### Bioinformatics Stronghold  
 - DNA 서열과 RNA 서열 아미노산 서열을 자유롭게 코드를 통해 다룰 수 있는지 확인  
