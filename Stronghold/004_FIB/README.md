@@ -72,9 +72,9 @@ map() : 반복 가능한(iterable) 데이터의 각 요소에 대해 특정 함�
 - 즉, 재귀 호출이 어떻게 이루어지는지 단계별로 추적해보겠다.
 
 ### 함수의 의미 정리
-`
+```
 return count_rabbit(n-1, k) + k * count_rabbit(n-2, k)
-`
+```
 - `count_rabbit(n-1, k)` → 지난달까지 살아있는 토끼 수
 - `count_rabbit(n-2, k)` * k → 두 달 전에 태어난 토끼들이 이번 달에 새끼를 낳음
     - `count_rabbit(n-2, k)`: 두 달 전의 성체 토끼 수
@@ -85,46 +85,46 @@ return count_rabbit(n-1, k) + k * count_rabbit(n-2, k)
 - 아래부터는 n=5, k=3인 경우 함수 호출 과정이다.
 
 ### 1단계: `count_rabbit(5, 3)` 호출
-`
+```
 count_rabbit(5, 3) = count_rabbit(4, 3) + 3 * count_rabbit(3, 3)
-`
+```
 - `count_rabbit(4, 3)` → 지난달까지 살아 있는 토끼 수
 - `3 * count_rabbit(3, 3)` → 두 달 전에 태어난 토끼들이 낳은 새끼 수
 
 ### 2단계: `count_rabbit(4, 3)`과 `count_rabbit(3, 3)` 계산
 `count_rabbit(4, 3)` 계산:
-`
+```
 count_rabbit(4, 3) = count_rabbit(3, 3) + 3 * count_rabbit(2, 3)
-`
+```
 - `count_rabbit(3, 3)` → 3개월 차까지 살아 있는 토끼 수
 - `3 * count_rabbit(2, 3)` → 두 달 전에 태어난 토끼들이 낳은 새끼 수  
 <br>
 `count_rabbit(3, 3)` 계산:
-`
+```
 `count_rabbit(3, 3)` = `count_rabbit(2, 3)` + `3 * count_rabbit(1, 3)`
-`
+```
 - `count_rabbit(2, 3) = 1` (첫 두 달은 기본적으로 1쌍)
 - `count_rabbit(1, 3) = 1` (첫 두 달은 기본적으로 1쌍)
 - `count_rabbit(3, 3) = 1 + 3 * 1 = 4`
 
 ### 3단계: `count_rabbit(4, 3)` 값 구하기
-`
+```
 count_rabbit(4, 3) = count_rabbit(3, 3) + 3 * count_rabbit(2, 3)
-`
+```
 - `count_rabbit(3, 3) = 4`  
 - `count_rabbit(2, 3) = 1`  
-`
+```
 count_rabbit(4, 3) = 4 + 3 * 1 = 7
-`
+```
 
 ###  4단계: `count_rabbit(5, 3)` 값 구하기
-`
+```
 count_rabbit(5, 3) = count_rabbit(4, 3) + 3 * count_rabbit(3, 3)
-`
+```
 - `count_rabbit(4, 3) = 7`  
 - `count_rabbit(3, 3) = 4`  
-`
+```
 count_rabbit(5, 3) = 7 + 3 * 4 = 7 + 12 = 19
-`
+```
 - 최종 결과: `count_rabbit(5, 3) = 19`
 
