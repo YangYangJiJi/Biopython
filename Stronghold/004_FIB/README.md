@@ -81,7 +81,9 @@ return count_rabbit(n-1, k) + k * count_rabbit(n-2, k)
     - `k * (두 달 전의 성체 토끼 수)`: 두 달 전에 태어난 토끼들이 매달 k 쌍씩 새끼를 낳음
 <br>
 <br>
-아래부터는 n=5, k=3인 경우 함수 호출 과정이다.
+
+- 아래부터는 n=5, k=3인 경우 함수 호출 과정이다.
+
 ### 1단계: `count_rabbit(5, 3)` 호출
 `
 count_rabbit(5, 3) = count_rabbit(4, 3) + 3 * count_rabbit(3, 3)
